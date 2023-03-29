@@ -14,10 +14,12 @@ const TodoList = () => {
         setTodoData(filterList)
     };
 
-    const taskCompleted = (id)=>{
+    const taskCompleted = (id,value)=>{
+        console.log(id,value)
         let updatedList = todoData.map(obj=>{
             if(obj.id==id){
-                return {...obj,isComplete:true}
+                console.log(id,"inside task")
+                return {...obj,isComplete:value}
             }else return obj;
         });
         setTodoData(updatedList)
