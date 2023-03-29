@@ -1,7 +1,13 @@
-import React from 'react'
+import React,{useState} from 'react'
 
 const DisplayList = ({todoData,taskCompleted,handleDelete}) => {
+    const [check,setCheck] = useState(false)
+    const handleCheckbox = (e,id)=>{
+        console.log(e.target.checked);
+        taskCompleted(id,e.target.checked);
 
+        setCheck(!check);
+    }
    
   return (
     <div>
@@ -11,8 +17,8 @@ const DisplayList = ({todoData,taskCompleted,handleDelete}) => {
             {todoData.map(({isComplete,text,id})=>{
                 return (
                     <div className='individual_todoItem' key={id}>
-                        <input type="checkbox" onChange={handleCheckbox} />
-                        <p style={{color:isComplete?"blue":"gray"}}>{text}</p>
+                        <input checked={check} type="checkbox" onChange={(e)=>handleCheckbox(e,id)} />
+                        <p style={{color:isComplete?"blue":"gray"}}>{text} {isComplete?"complete":"not"}</p>
                         <button onClick={()=>handleDelete(id)} >delete</button>
                     </div>
                 )
