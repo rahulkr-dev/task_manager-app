@@ -10,7 +10,7 @@ const AddTodo = ({addTodoFun}) => {
         // alert(text);
 
         addTodoFun({
-            isComplete:false,text,id:Date.now + Math.random()
+            isComplete:false,text,id:Date.now() + Math.random()
         })
         setText("")
     }
