@@ -9,16 +9,19 @@ const Column = ({ tasks, column }) => {
             <Heading fontSize={"1.3rem"}>{column.title}</Heading>
             <Droppable droppableId={column.id}>
                 {
-                    (provider) => (
-                        <Box 
+                    (provider, snapshot) => (
+
+                        <Box
                             ref={provider.innerRef}
                             {...provider.droppableProps}
+                            bg={snapshot.isDraggingOver ? "lightcoral" : "white"}
                         >
                             {
-                                tasks.map((task,index) => <Task index={index} key={task.id} task={task} />)
+                                tasks.map((task, index) => <Task index={index} key={task.id} task={task} />)
                             }
                             {provider.placeholder}
                         </Box>
+
                     )
                 }
 

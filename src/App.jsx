@@ -9,7 +9,7 @@ const App = () => {
   console.log(todoData);
 
   const onDragEnd = (result)=>{
-    console.log(result)
+    // console.log(result)
     const {source,destination,draggableId} = result;
     if(destination==null) return;
     if(destination.droppableId===source.droppableId && destination.index===source.index) return;
