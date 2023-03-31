@@ -1,16 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import TodoList from './components/TodoList'
+import React,{useContext} from 'react'
+import { ChakraProvider } from '@chakra-ui/react';
+import { AppContext } from './context/AppContext';
+import {Column} from "./components"
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
+  const {todoData} = useContext(AppContext);
+  console.log(todoData)
   return (
-    <div className="App">
-      <TodoList />
-    </div>
+    <ChakraProvider>
+        <>
+        {
+          todoData.columnOrder.map(columnId=>{
+            let column = todoData.columns[columnId];
+            let tasks = column.taskIds.map(taskId=>todoData.tasks[taskId]);
+            return <Column column={column} tasks={tasks} />
+          })
+        }
+        </>
+    </ChakraProvider>
   )
 }
 
