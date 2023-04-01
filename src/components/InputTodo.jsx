@@ -7,7 +7,7 @@ const InputTodo = () => {
     const [text,setText] = useState('');
     const {todoData,setTodoData} = useContext(AppContext);
 
-    const handleClick = (e)=>{
+    const handleClick = ()=>{
         // alert(text)
         // LOGIC
         const id = uuidv4()
@@ -32,11 +32,16 @@ const InputTodo = () => {
         };
         setTodoData(state_update);
         setText("")
+    };
+    const handleEnterKey = (e)=>{
+        if(e.keyCode==13) {
+            handleClick()
+        }
     }
   return (
-    <Flex w="max-content" margin={'auto'}>
-        <Input value={text} onChange={({target})=>setText(target.value)} pl={"15px"} variant={"unstyled"} bg="gray.200" placeholder='Enter task here...' />
-        <Button onClick={handleClick} colorScheme='gray' >Add Task</Button>
+    <Flex w="max-content" margin={'auto'} gap="5px">
+        <Input onKeyUp={handleEnterKey} value={text} onChange={({target})=>setText(target.value)} pl={"15px"} variant={"unstyled"} bg="gray.200" placeholder='Enter task here...' />
+        <Button onClick={()=>handleClick} colorScheme='gray' >Add Task</Button>
     </Flex>
   )
 }

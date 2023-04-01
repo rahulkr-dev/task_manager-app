@@ -6,7 +6,7 @@ import { Droppable } from 'react-beautiful-dnd'
 const Column = ({ tasks, column }) => {
     return (
         <Box bg={"blackAlpha.500"} border="2px solid gray" boxShadow={"lg"} m="2rem" w="max-content" pt="1rem">
-            <Heading pb=".7rem" textAlign={"center"} fontSize={"1.3rem"}>{column.title} :
+            <Heading color="lightblue" pb=".7rem" textAlign={"center"} fontSize={"1.3rem"}>{column.title} :
             <Text fontSize={"1.5rem"} color={"gray.200"} fontWeight={"bold"} fontFamily={"cursive"} textShadow={"dark-lg"} ml="10px" as="span">{column.taskIds.length}</Text>
             </Heading>
             <Droppable droppableId={column.id}>
