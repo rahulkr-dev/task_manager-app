@@ -15,8 +15,18 @@ export const initialData = {
             id:"column_1",
             title:"To Do",
             taskIds:['task_1','task_2','task_3']
+        },
+        column_2:{
+            id:"column_2",
+            title:"In Progress",
+            taskIds:[]
+        },
+        column_3:{
+            id:"column_3",
+            title:"Completed",
+            taskIds:[]
         }
     },
-    columnOrder:['column_1']
+    columnOrder:['column_1',"column_2","column_3"]
 
 }
