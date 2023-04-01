@@ -12,8 +12,11 @@ const Task = ({ task, index }) => {
                         {...provider.draggableProps}
                         {...provider.dragHandleProps}
                         bg={snapshot.isDragging?"lightblue":"white"}
-                        cursor={"pointer"} p="6px 12px" boxShadow={"md"} borderColor={"gray.400"} m="5px"
+                        fontWeight={snapshot.isDragging?"bolder":"inherit"}
+                        cursor={"pointer"} p="6px 12px" boxShadow={"md"} borderColor={"gray.400"} m="5px" textTransform={"capitalize"} fontFamily={"cursive"} 
+                        borderRadius={"5px"}
                     >
+                        {index+1} : 
                         {task.content}
                     </Text>
                 )

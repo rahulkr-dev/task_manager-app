@@ -67,7 +67,7 @@ const App = () => {
     <ChakraProvider>
       <InputTodo />
       <DragDropContext onDragEnd={onDragEnd}>
-        <Flex gap="1rem">
+        <Flex gap="0rem" wrap={"wrap"} justifyContent={"center"}>
         {
           todoData.columnOrder.map(columnId=>{
             let column = todoData.columns[columnId];
