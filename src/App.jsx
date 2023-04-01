@@ -3,6 +3,7 @@ import { ChakraProvider,Flex } from '@chakra-ui/react';
 import { AppContext } from './context/AppContext';
 import {Column} from "./components";
 import { DragDropContext } from 'react-beautiful-dnd';
+import InputTodo from './components/InputTodo';
 
 const App = () => {
   const {todoData,setTodoData} = useContext(AppContext);
@@ -64,6 +65,7 @@ const App = () => {
    }
   return (
     <ChakraProvider>
+      <InputTodo />
       <DragDropContext onDragEnd={onDragEnd}>
         <Flex gap="1rem">
         {
