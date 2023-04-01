@@ -37,10 +37,10 @@ const App = () => {
     const startCol = todoData.columns[source.droppableId];
     const endCol = todoData.columns[destination.droppableId];
 
-    const startTaskIds = Array.from(startCol[taskIds]);
+    const startTaskIds = Array.from(startCol["taskIds"]);
     startTaskIds.splice(source.index,1);
 
-    const endTaskIds = Array.from(endCol[taskIds]);
+    const endTaskIds = Array.from(endCol["taskIds"]);
     endTaskIds.splice(destination.index,0,draggableId);
     const state_update = {
       ...todoData,
