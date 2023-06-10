@@ -41,7 +41,7 @@ const InputTodo = () => {
   return (
     <Flex w="max-content" margin={'auto'} gap="5px">
         <Input onKeyUp={handleEnterKey} value={text} onChange={({target})=>setText(target.value)} pl={"15px"} variant={"unstyled"} bg="gray.200" placeholder='Enter task here...' />
-        <Button onClick={()=>handleClick} colorScheme='gray' >Add Task</Button>
+        <Button onClick={()=>handleClick()} colorScheme='gray' >Add Task</Button>
     </Flex>
   )
 }
